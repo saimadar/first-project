@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Landing Page</title>
+
+  <!-- meta/ favicon -->
+   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   
   <!-- Google Fonts for modern typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +21,14 @@
   <!-- HEADER / NAVIGATION -->
   <header class="header">
     <div class="container nav-container">
-      <a href="#" class="logo">Brand<span>Name</span></a>
-      <nav class="navbar">
+      <a href="#home" class="logo">Brand<span>Name</span></a>
+      <nav class="navbar" aria-label="main navigation">
+        <!-- high: internal anchor links -->
         <ul class="nav-links">
-          <li><a href="https://www.magnific.com/free-photos-vectors/house">Home</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Website">About</a></li>
-          <li><a href="https://dribbble.com/tags/service-website">Services</a></li>
-          <li><a href="https://www.google.com">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -35,12 +39,16 @@
     <section id="home" class="hero">
       <div class="container hero-container">
         <div class="hero-content">
+         
           <h1>Build Your Digital Future Today</h1>
           <p>We craft modern, user-friendly websites that elevate your business to the next level.</p>
           <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
         <div class="hero-image">
-          <img src=".vscode/brand image.jfif" alt="Hero Illustration">
+          <img src=".assets/brand-image.jfif" alt="Hero Illustration"
+          width="500"
+          height="350"
+          loading="eager">
         </div>
       </div>
     </section>
@@ -89,18 +97,19 @@
           <h2>Contact Us</h2>
           <p>Have questions? Send us a message!</p>
         </div>
-        <form class="contact-form">
+
+        <form class="contact-form" action="#" method="post">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="name" name="name" placeholder="your Name" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="email" id="email" name="email" placeholder="yourEmail" required>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <textarea id="message" rows="5" name="message" placeholder="Your Message" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
