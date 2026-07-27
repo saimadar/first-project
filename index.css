@@ -190,7 +190,7 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(autofit, minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 24px;
 }
 
@@ -282,7 +282,7 @@ body {
 }
 
 /* Mobile View */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .nav-container {
     flex-direction: column;
     gap: 12px;
@@ -295,9 +295,33 @@ body {
     align-items: center;
     gap: 12px;
     width: 100%;
+    padding: 0;
   }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 8px 0;
+    width: 100%;
+
+  }
+
+  .hero-content
 
   .hero-content h1 {
     font-size: 1.8rem;
+  }
+
+  .contact-form{
+    padding: 20px 15px;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    text-align: center;
   }
 }
