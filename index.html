@@ -42,7 +42,7 @@
          
           <h1>Build Your Digital Future Today</h1>
           <p>We craft modern, user-friendly websites that elevate your business to the next level.</p>
-          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#contact" id="get-started-btn" class="btn btn-primary">Get Started</a>
         </div>
         <div class="hero-image">
           <img src="assets/brand-image.jpg" alt="Illustration of a brand image"
@@ -109,20 +109,26 @@
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" rows="5" name="message" placeholder="Your Message" required></textarea>
+            <textarea id="message" maxlength="200" name="message" placeholder="Your Message" required></textarea>
+            <small id="char-counter">0/200 characters</small>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </section>
+    
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 BrandName. All rights reserved.</p>
+      <p>&copy;BrandName. All rights reserved.</p>
+      <p id="current-year"></p>
     </div>
   </footer>
+  <button id="theme-toggle-btn">TOGGLE DARK MODE</button>
 
+<button id="scroll-top-btn" title="Go to top">↑ Top</button>
+<script src="index.js"></script>
 </body>
 </html>
