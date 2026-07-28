@@ -7,7 +7,8 @@
   --bg-light: #f8fafc;
   --bg-white: #ffffff;
   --text-color: #1e293b;
-  --text-muted: #64748b;
+  /* Accessibility:increased contrast for muted text */
+  --text-muted: #475569;
   --border-radius: 8px;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
@@ -156,6 +157,9 @@ body {
 
 .hero-image img {
   width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
   border-radius: var(--border-radius);
 }
 
@@ -186,7 +190,7 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 24px;
 }
 
@@ -278,18 +282,105 @@ body {
 }
 
 /* Mobile View */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .nav-container {
     flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+    gap: 12px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+
+
+  .nav-links{
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
   }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 8px 0;
+    width: 100%;
+
+  }
+
+  .hero-content
 
   .hero-content h1 {
     font-size: 1.8rem;
   }
+
+  .contact-form{
+    padding: 20px 15px;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.nav-links.active{
+  background-color:bisque;
+  font-weight: bold;
+}
+
+#scroll-top-btn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px;
+  right: 20px;
+  z-index: 99; 
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#scroll-top-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Normal / Light Theme Styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Optional: Adjust card or section backgrounds in dark mode */
+body.dark-theme header,
+body.dark-theme footer,
+body.dark-theme .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+#theme-toggle-btn{
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
 }
